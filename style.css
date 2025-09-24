@@ -1,0 +1,224 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #e50914;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e50914;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background: #e50914;
+}
+
+
+nav .carrinho {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav .carrinho:hover {
+  color: #e50914;
+}
+
+header {
+  margin-top: 80px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #e50914;
+  text-transform: uppercase;
+}
+
+.Carrossell {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  overflow: hidden;
+  margin: 199990px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(229,9,20,0.5);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100% auto;
+  object-fit: cover;
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #fff;
+  border-left: 4px solid #e50914;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(229,9,20,0.7);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgba(229,9,20,1);
+}
+
+.btn.prev { left: 10px; }
+.btn.next { right: 10px; }
+
+/* Catálogo */
+.catalogo {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20x auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px 50px;
+}
+
+.card {
+  flex-direction: column;
+    align-items: center;
+     justify-content: center;
+  display: flex;
+  gap: 20px;
+  margin: 30px;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 19px rgba(229,9,20,0.5);
+}
+
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+   align-items: center;
+     justify-content: center;
+  grid-template-columns: 1fr 1fr;
+   flex-direction: column;
+  padding: 15px;
+  text-align: center ;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.card-body p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.btn-comprar {
+  background: #e50914;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #ff1e27;
+}
+
+/* Rodapé */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 2px solid #e50914;
+}

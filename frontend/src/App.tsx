@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Navbar from "./components/NavBar";
+import Carousel from "./components/Carousel";
+import ProductGrid from "./components/ProductGrid";
+import Footer from "./components/Footer";
+import type { Category } from "./types";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [selected, setSelected] = useState<Category>("camisetas");
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Navbar selected={selected} onSelect={setSelected} />
+      <header className="header">Catálogo drip Streetwear</header>
 
-export default App
+      {/* Carrossel do topo */}
+      <section className="section">
+        <Carousel
+          slides={[
+            { src: "/img/camisa01.jpg", descricao: "Camiseta Street Trip" },
+            { src: "/img/bone01.jpg", descricao: "Boné Streetwear" },
+            { src: "/img/camisa02.jpg", descricao: "Camiseta Oversized" },
+          ]}
+          interval={5000}
+        />
+      </section>
+
+      {/* Catálogo filtrado por categoria */}
+      <section className="section">
+        <ProductGrid category={selected} />
+      </section>
+
+      <Footer />
+    </>
+  );
+}
